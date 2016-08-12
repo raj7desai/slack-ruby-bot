@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>UPGRADING - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Upgrading+SlackRubyBot">Upgrading SlackRubyBot</a>
+    <li><a href="#label-Upgrading+to+-3E-3D+0.8.0">Upgrading to &gt;= 0.8.0</a>
+    <li><a href="#label-Require+a+concurrency+library">Require a concurrency library</a>
+    <li><a href="#label-Hook-3A-3ABase+was+removed-2C+explicitly+register+any+custom+hook+classes">Hook::Base was removed, explicitly register any custom hook classes</a>
+    <li><a href="#label-Upgrading+to+-3E-3D+0.7.0">Upgrading to &gt;= 0.7.0</a>
+    <li><a href="#label-Simplify+Match+Expression+Checking">Simplify Match Expression Checking</a>
+    <li><a href="#label-Remove+any+bot.auth-21+calls">Remove any bot.auth! calls</a>
+    <li><a href="#label-Upgrading+to+-3E-3D+0.6.0">Upgrading to &gt;= 0.6.0</a>
+    <li><a href="#label-Replace+SlackRubyBot-3A-3ACommands-3A-3ABase-23call+with+command-2C+operator+or+match">Replace SlackRubyBot::Commands::Base#call with command, operator or match</a>
+    <li><a href="#label-Replace+send_message-2C+send_message_with_gif+and+send_gif+with+client.say">Replace send_message, send_message_with_gif and send_gif with client.say</a>
+    <li><a href="#label-For+basic+bots+replace+SlackRubyBot-3A-3AApp+with+SlackRubyBot-3A-3ABot+and+implement+commands+inline">For basic bots replace SlackRubyBot::App with SlackRubyBot::Bot and implement commands inline</a>
+    <li><a href="#label-Upgrading+to+-3E-3D+0.4.0">Upgrading to &gt;= 0.4.0</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./DEPLOYMENT_md.html">DEPLOYMENT</a>
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./RELEASING_md.html">RELEASING</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./TUTORIAL_md.html">TUTORIAL</a>
+  
+    <li><a href="./UPGRADING_md.html">UPGRADING</a>
+  
+    <li><a href="./examples/market/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/market/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/minimal/Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./examples/minimal/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/google/CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./examples/minimal/google/CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./examples/minimal/google/DEPLOYMENT_md.html">DEPLOYMENT</a>
+  
+    <li><a href="./examples/minimal/google/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/minimal/google/Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./examples/minimal/google/LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./examples/minimal/google/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/google/README_md.html">README</a>
+  
+    <li><a href="./examples/minimal/google/Rakefile.html">Rakefile</a>
+  
+    <li><a href="./examples/minimal/google/app_json.html">app.json</a>
+  
+    <li><a href="./examples/minimal/google/config_ru.html">config.ru</a>
+  
+    <li><a href="./examples/weather/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/weather/Procfile.html">Procfile</a>
+  
+    <li><a href="./slack-ruby-bot_gemspec.html">slack-ruby-bot.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page UPGRADING.md">
+
+<h1 id="label-Upgrading+SlackRubyBot">Upgrading <a href="SlackRubyBot.html">SlackRubyBot</a><span><a href="#label-Upgrading+SlackRubyBot">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h3 id="label-Upgrading+to+-3E-3D+0.8.0">Upgrading to &gt;= 0.8.0<span><a href="#label-Upgrading+to+-3E-3D+0.8.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-Require+a+concurrency+library">Require a concurrency library<span><a href="#label-Require+a+concurrency+library">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>The <code>faye-websocket</code> library is no longer required by default.
+Add either <code>faye-websocket</code> or <code>celluiloid-io</code> to
+your <code>Gemfile</code> depending on which concurrency implementation
+you&#39;d like to use. We recommend <code>celluloid-io</code> moving
+forward.</p>
+
+<h4 id="label-Hook-3A-3ABase+was+removed-2C+explicitly+register+any+custom+hook+classes">Hook::Base was removed, explicitly register any custom hook classes<span><a href="#label-Hook-3A-3ABase+was+removed-2C+explicitly+register+any+custom+hook+classes">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Hook classes are now handled differently, namely they are explicitly
+registered into <code>SlackRubyBot::Server</code> via a configuration
+option (<code>hook_handlers</code>) or by passing a similar hash later on
+through the <code>add_hook_handlers</code> method. Including Hook classes
+directly into the server class is no longer needed.</p>
+
+<p>A hook is actioned via a <code>call</code> message onto the handler object
+(this can be anything that responds to that), so you&#39;ll need to rename
+your method.</p>
+
+<p>Finally, you can now register multiple hooks for the same event, so if you
+had any code to remove default hooks, you&#39;ll need to change it so you
+pass a configuration hash into <code>Server</code></p>
+
+<h3 id="label-Upgrading+to+-3E-3D+0.7.0">Upgrading to &gt;= 0.7.0<span><a href="#label-Upgrading+to+-3E-3D+0.7.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-Simplify+Match+Expression+Checking">Simplify Match Expression Checking<span><a href="#label-Simplify+Match+Expression+Checking">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>The regular expression parser for commands will now include a
+<code>nil</code> value for <code>expression</code> when an expression is
+not present. You can therefore no longer rely on checking
+<code>match.names.include?(&#39;expression&#39;)</code>, instead check
+<code>match['expression']</code>.</p>
+
+<h4 id="label-Remove+any+bot.auth-21+calls">Remove any bot.auth! calls<span><a href="#label-Remove+any+bot.auth-21+calls">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p><a href="SlackRubyBot.html">SlackRubyBot</a> 0.6.x versions invoked a
+method called <code>auth!</code>, which caused a pre-flight authentication
+via <a href="Slack.html">Slack</a> Web API <code>auth_test</code> method
+and collected a number of properties, such as client and team ID or name.
+This method has been removed in favor of using data available in the
+<code>Slack::RealTime::Client</code> local store introduced in <a
+href="https://github.com/dblock/slack-ruby-client/issues/54">slack-ruby-client#54</a>.
+Remove any explicit calls to this method.</p>
+
+<h3 id="label-Upgrading+to+-3E-3D+0.6.0">Upgrading to &gt;= 0.6.0<span><a href="#label-Upgrading+to+-3E-3D+0.6.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>While entirely compatible with the 0.5.x series, a number of methods have
+been deprecated and will be removed in the next release.</p>
+
+<h4 id="label-Replace+SlackRubyBot-3A-3ACommands-3A-3ABase-23call+with+command-2C+operator+or+match">Replace SlackRubyBot::Commands::Base#call with command, operator or match<span><a href="#label-Replace+SlackRubyBot-3A-3ACommands-3A-3ABase-23call+with+command-2C+operator+or+match">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Prefer <code>command</code>, <code>operator</code> or <code>match</code>
+with a block instead of implementing a <code>self.call</code> method.</p>
+
+<p>Before:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;slack-ruby-bot&#39;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Bot</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Bot</span>
+  <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;ping&#39;</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span>)
+    <span class="ruby-operator">...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>After:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;slack-ruby-bot&#39;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Bot</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Bot</span>
+  <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;ping&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+    <span class="ruby-operator">...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-Replace+send_message-2C+send_message_with_gif+and+send_gif+with+client.say">Replace send_message, send_message_with_gif and send_gif with client.say<span><a href="#label-Replace+send_message-2C+send_message_with_gif+and+send_gif+with+client.say">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Use <code>client.say</code> instead of <code>send_message</code>,
+<code>send_message_with_gif</code> and <code>send_gif</code> in commands.</p>
+
+<p>Before:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Bot</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Bot</span>
+ <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;one&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">send_message</span> <span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-string">&#39;Text.&#39;</span>
+ <span class="ruby-keyword">end</span>
+
+ <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;two&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">send_message_with_gif</span> <span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-string">&quot;Text.&quot;</span>, <span class="ruby-string">&#39;keyword&#39;</span>
+ <span class="ruby-keyword">end</span>
+
+ <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;three&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">send_gif</span> <span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-string">&#39;keyword&#39;</span>
+ <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>After:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Bot</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Bot</span>
+ <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;one&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">client</span>.<span class="ruby-identifier">say</span>(<span class="ruby-identifier">channel</span><span class="ruby-operator">:</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Text.&#39;</span>)
+ <span class="ruby-keyword">end</span>
+
+ <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;two&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">client</span>.<span class="ruby-identifier">say</span>(<span class="ruby-identifier">channel</span><span class="ruby-operator">:</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Text.&#39;</span>, <span class="ruby-identifier">gif</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;keyword&#39;</span>)
+ <span class="ruby-keyword">end</span>
+
+ <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;three&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">client</span>.<span class="ruby-identifier">say</span>(<span class="ruby-identifier">channel</span><span class="ruby-operator">:</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-identifier">gif</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;keyword&#39;</span>)
+ <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-For+basic+bots+replace+SlackRubyBot-3A-3AApp+with+SlackRubyBot-3A-3ABot+and+implement+commands+inline">For basic bots replace <a href="SlackRubyBot/App.html">SlackRubyBot::App</a> with <a href="SlackRubyBot/Bot.html">SlackRubyBot::Bot</a> and implement commands inline<span><a href="#label-For+basic+bots+replace+SlackRubyBot-3A-3AApp+with+SlackRubyBot-3A-3ABot+and+implement+commands+inline">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Before:</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">PongBot</span>
+  <span class="ruby-keyword">class</span> <span class="ruby-constant">App</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">App</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">class</span> <span class="ruby-constant">Ping</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+    <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;ping&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_match</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">client</span>.<span class="ruby-identifier">message</span>(<span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;pong&#39;</span>, <span class="ruby-identifier">channel</span><span class="ruby-operator">:</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">PongBot</span><span class="ruby-operator">::</span><span class="ruby-constant">App</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">run</span>
+</pre>
+
+<p>After:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Bot</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SlackRubyBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Bot</span>
+  <span class="ruby-identifier">command</span> <span class="ruby-string">&#39;ping&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">_match</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">client</span>.<span class="ruby-identifier">say</span>(<span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;pong&#39;</span>, <span class="ruby-identifier">channel</span><span class="ruby-operator">:</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Bot</span>.<span class="ruby-identifier">run</span>
+</pre>
+
+<h3 id="label-Upgrading+to+-3E-3D+0.4.0">Upgrading to &gt;= 0.4.0<span><a href="#label-Upgrading+to+-3E-3D+0.4.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This version uses <a
+href="https://github.com/dblock/slack-ruby-client">slack-ruby-client</a>
+instead of <a
+href="https://github.com/aki017/slack-ruby-gem">slack-ruby-gem</a>.</p>
+
+<p>The command interface now takes a <code>client</code> parameter, which is
+the RealTime Messaging API instance. Add the new parameter to all
+<code>call</code> calls in classes that inherit from
+<code>SlackRubyBot::Commands::Base</code>.</p>
+
+<p>Before:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span>)
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>After:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span>)
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This also applies to <code>command</code>, <code>operator</code> and
+<code>match</code> blocks.</p>
+
+<p>Before:</p>
+
+<pre class="ruby"><span class="ruby-identifier">command</span> <span class="ruby-string">&#39;ping&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>After:</p>
+
+<pre class="ruby"><span class="ruby-identifier">command</span> <span class="ruby-string">&#39;ping&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>You can now send messages directly via the RealTime Messaging API.</p>
+
+<pre class="ruby"><span class="ruby-identifier">client</span>.<span class="ruby-identifier">message</span> <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">channel</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;channel&#39;</span>
+</pre>
+
+<p>Otherwise you must now pass the <code>client</code> parameter to
+<code>send_message</code> and <code>send_message_with_gif</code>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span>)
+  <span class="ruby-identifier">send_message</span> <span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-string">&#39;hello&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">match</span>)
+  <span class="ruby-identifier">send_message_with_gif</span> <span class="ruby-identifier">client</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">channel</span>, <span class="ruby-string">&#39;hello&#39;</span>, <span class="ruby-string">&#39;hi&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

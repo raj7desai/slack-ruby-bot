@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>CONTRIBUTING - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Contributing+to+SlackRubyBot">Contributing to SlackRubyBot</a>
+    <li><a href="#label-Fork+the+Project">Fork the Project</a>
+    <li><a href="#label-Bundle+Install+and+Test">Bundle Install and Test</a>
+    <li><a href="#label-Run+SlackRubyBot+in+Development">Run SlackRubyBot in Development</a>
+    <li><a href="#label-Create+a+Topic+Branch">Create a Topic Branch</a>
+    <li><a href="#label-Write+Tests">Write Tests</a>
+    <li><a href="#label-Write+Code">Write Code</a>
+    <li><a href="#label-Write+Documentation">Write Documentation</a>
+    <li><a href="#label-Update+Changelog">Update Changelog</a>
+    <li><a href="#label-Commit+Changes">Commit Changes</a>
+    <li><a href="#label-Push">Push</a>
+    <li><a href="#label-Make+a+Pull+Request">Make a Pull Request</a>
+    <li><a href="#label-Rebase">Rebase</a>
+    <li><a href="#label-Update+CHANGELOG+Again">Update CHANGELOG Again</a>
+    <li><a href="#label-Check+on+Your+Pull+Request">Check on Your Pull Request</a>
+    <li><a href="#label-Be+Patient">Be Patient</a>
+    <li><a href="#label-Thank+You">Thank You</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./DEPLOYMENT_md.html">DEPLOYMENT</a>
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./RELEASING_md.html">RELEASING</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./TUTORIAL_md.html">TUTORIAL</a>
+  
+    <li><a href="./UPGRADING_md.html">UPGRADING</a>
+  
+    <li><a href="./examples/market/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/market/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/minimal/Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./examples/minimal/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/google/CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./examples/minimal/google/CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./examples/minimal/google/DEPLOYMENT_md.html">DEPLOYMENT</a>
+  
+    <li><a href="./examples/minimal/google/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/minimal/google/Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./examples/minimal/google/LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./examples/minimal/google/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/google/README_md.html">README</a>
+  
+    <li><a href="./examples/minimal/google/Rakefile.html">Rakefile</a>
+  
+    <li><a href="./examples/minimal/google/app_json.html">app.json</a>
+  
+    <li><a href="./examples/minimal/google/config_ru.html">config.ru</a>
+  
+    <li><a href="./examples/weather/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/weather/Procfile.html">Procfile</a>
+  
+    <li><a href="./slack-ruby-bot_gemspec.html">slack-ruby-bot.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page CONTRIBUTING.md">
+
+<h1 id="label-Contributing+to+SlackRubyBot">Contributing to <a href="SlackRubyBot.html">SlackRubyBot</a><span><a href="#label-Contributing+to+SlackRubyBot">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This project is work of <a
+href="https://github.com/dblock/slack-ruby-bot/graphs/contributors">many
+contributors</a>.</p>
+
+<p>You&#39;re encouraged to submit <a
+href="https://github.com/dblock/slack-ruby-bot/pulls">pull requests</a>, <a
+href="https://github.com/dblock/slack-ruby-bot/issues">propose features and
+discuss issues</a>.</p>
+
+<p>In the examples below, substitute your Github username for
+<code>contributor</code> in URLs.</p>
+
+<h2 id="label-Fork+the+Project">Fork the Project<span><a href="#label-Fork+the+Project">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Fork the <a href="https://github.com/dblock/slack-ruby-bot">project on
+Github</a> and check out your copy.</p>
+
+<pre>git clone https://github.com/contributor/slack-ruby-bot.git
+cd slack-ruby-bot
+git remote add upstream https://github.com/dblock/slack-ruby-bot.git</pre>
+
+<h2 id="label-Bundle+Install+and+Test">Bundle Install and Test<span><a href="#label-Bundle+Install+and+Test">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Ensure that you can build the project and run tests.</p>
+
+<pre class="ruby"><span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span>
+<span class="ruby-identifier">bundle</span> <span class="ruby-identifier">exec</span> <span class="ruby-identifier">rake</span>
+</pre>
+
+<h2 id="label-Run+SlackRubyBot+in+Development">Run <a href="SlackRubyBot.html">SlackRubyBot</a> in Development<span><a href="#label-Run+SlackRubyBot+in+Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Create a private slack group for yourself.</p>
+
+<p>Create a new <a href="Bot.html">Bot</a> Integration under <a
+href="http://slack.com/services/new/bot">services/new/bot</a>.</p>
+
+<p><img src="screenshots/register-bot.png"></p>
+
+<p>On the next screen, note the API token.</p>
+
+<p>Run <code>SLACK_API_TOKEN=&lt;your API token&gt; foreman start</code>.</p>
+
+<p>You can also create a <code>.env</code> file with
+<code>SLACK_API_TOKEN=&lt;your API token&gt;</code> and just run
+<code>foreman start</code>.</p>
+
+<h2 id="label-Create+a+Topic+Branch">Create a Topic Branch<span><a href="#label-Create+a+Topic+Branch">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Make sure your fork is up-to-date and create a topic branch for your
+feature or bug fix.</p>
+
+<pre>git checkout master
+git pull upstream master
+git checkout -b my-feature-branch</pre>
+
+<h2 id="label-Write+Tests">Write Tests<span><a href="#label-Write+Tests">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Try to write a test that reproduces the problem you&#39;re trying to fix or
+describes a feature that you want to build. Add to <a href="spec">spec</a>.</p>
+
+<p>We definitely appreciate pull requests that highlight or reproduce a
+problem, even without a fix.</p>
+
+<h2 id="label-Write+Code">Write Code<span><a href="#label-Write+Code">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Implement your feature or bug fix.</p>
+
+<p>Ruby style is enforced with <a
+href="https://github.com/bbatsov/rubocop">Rubocop</a>. Run <code>bundle
+exec rubocop</code> and fix any style issues highlighted.</p>
+
+<p>Make sure that <code>bundle exec rake</code> completes without errors.</p>
+
+<h2 id="label-Write+Documentation">Write Documentation<span><a href="#label-Write+Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Document any external behavior in the <a href="README.md">README</a>.</p>
+
+<h2 id="label-Update+Changelog">Update Changelog<span><a href="#label-Update+Changelog">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Add a line to <a href="CHANGELOG.md">CHANGELOG</a> under <em>Next
+Release</em>. Make it look like every other line, including your name and
+link to your Github account.</p>
+
+<h2 id="label-Commit+Changes">Commit Changes<span><a href="#label-Commit+Changes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Make sure git knows your name and email address:</p>
+
+<pre>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;contributor@example.com&quot;</pre>
+
+<p>Writing good commit logs is important. A commit log should describe what
+changed and why.</p>
+
+<pre>git add ...
+git commit</pre>
+
+<h2 id="label-Push">Push<span><a href="#label-Push">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">git</span> <span class="ruby-identifier">push</span> <span class="ruby-identifier">origin</span> <span class="ruby-identifier">my</span><span class="ruby-operator">-</span><span class="ruby-identifier">feature</span><span class="ruby-operator">-</span><span class="ruby-identifier">branch</span>
+</pre>
+
+<h2 id="label-Make+a+Pull+Request">Make a Pull Request<span><a href="#label-Make+a+Pull+Request">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Go to <a
+href="https://github.com/contributor/slack-ruby-bot">github.com/contributor/slack-ruby-bot</a>
+and select your feature branch. Click the &#39;Pull Request&#39; button and
+fill out the form. Pull requests are usually reviewed within a few days.</p>
+
+<h2 id="label-Rebase">Rebase<span><a href="#label-Rebase">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>If you&#39;ve been working on a change for a while, rebase with
+upstream/master.</p>
+
+<pre>git fetch upstream
+git rebase upstream/master
+git push origin my-feature-branch -f</pre>
+
+<h2 id="label-Update+CHANGELOG+Again">Update <a href="CHANGELOG_md.html">CHANGELOG</a> Again<span><a href="#label-Update+CHANGELOG+Again">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Update the <a href="CHANGELOG.md">CHANGELOG</a> with the pull request
+number. A typical entry looks as follows.</p>
+
+<pre>* [#123](https://github.com/dblock/slack-ruby-bot/pull/123): Reticulated splines - [@contributor](https://github.com/contributor).</pre>
+
+<p>Amend your previous commit and force push the changes.</p>
+
+<pre>git commit --amend
+git push origin my-feature-branch -f</pre>
+
+<h2 id="label-Check+on+Your+Pull+Request">Check on Your Pull Request<span><a href="#label-Check+on+Your+Pull+Request">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Go back to your pull request after a few minutes and see whether it passed
+muster with Travis-CI. Everything should look green, otherwise fix issues
+and amend your commit as described above.</p>
+
+<h2 id="label-Be+Patient">Be Patient<span><a href="#label-Be+Patient">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>It&#39;s likely that your change will not be merged and that the nitpicky
+maintainers will ask you to do more, or fix seemingly benign problems. Hang
+on there!</p>
+
+<h2 id="label-Thank+You">Thank You<span><a href="#label-Thank+You">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Please do know that we really appreciate and value your time and work. We
+love you, really.</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

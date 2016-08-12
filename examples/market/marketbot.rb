@@ -10,6 +10,7 @@ class MarketBot < SlackRubyBot::Bot
       client.web_client.chat_postMessage(
         channel: data.channel,
         as_user: true,
+        text: "Hello",
         attachments: [
           {
             fallback: "#{quote.name} (#{quote.symbol}): $#{quote.last_trade_price}",

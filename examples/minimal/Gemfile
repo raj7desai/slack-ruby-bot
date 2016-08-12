@@ -2,3 +2,4 @@ source 'http://rubygems.org'
 
 gem 'slack-ruby-bot', path: '../..'
 gem 'celluloid-io'
+gem 'alchemy-api-rb', :require => 'alchemy_api'

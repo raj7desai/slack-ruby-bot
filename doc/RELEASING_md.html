@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>RELEASING - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Releasing+Slack-Ruby-Bot">Releasing Slack-Ruby-Bot</a>
+    <li><a href="#label-Release">Release</a>
+    <li><a href="#label-Prepare+for+the+Next+Version">Prepare for the Next Version</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./DEPLOYMENT_md.html">DEPLOYMENT</a>
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./RELEASING_md.html">RELEASING</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./TUTORIAL_md.html">TUTORIAL</a>
+  
+    <li><a href="./UPGRADING_md.html">UPGRADING</a>
+  
+    <li><a href="./examples/market/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/market/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/minimal/Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./examples/minimal/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/google/CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./examples/minimal/google/CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./examples/minimal/google/DEPLOYMENT_md.html">DEPLOYMENT</a>
+  
+    <li><a href="./examples/minimal/google/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/minimal/google/Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./examples/minimal/google/LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./examples/minimal/google/Procfile.html">Procfile</a>
+  
+    <li><a href="./examples/minimal/google/README_md.html">README</a>
+  
+    <li><a href="./examples/minimal/google/Rakefile.html">Rakefile</a>
+  
+    <li><a href="./examples/minimal/google/app_json.html">app.json</a>
+  
+    <li><a href="./examples/minimal/google/config_ru.html">config.ru</a>
+  
+    <li><a href="./examples/weather/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./examples/weather/Procfile.html">Procfile</a>
+  
+    <li><a href="./slack-ruby-bot_gemspec.html">slack-ruby-bot.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page RELEASING.md">
+
+<h1 id="label-Releasing+Slack-Ruby-Bot">Releasing Slack-Ruby-Bot<span><a href="#label-Releasing+Slack-Ruby-Bot">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>There&#39;re no particular rules about when to release slack-ruby-bot.
+Release bug fixes frequenty, features not so frequently and breaking API
+changes rarely.</p>
+
+<h3 id="label-Release">Release<span><a href="#label-Release">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Run tests, check that all tests succeed locally.</p>
+
+<pre class="ruby"><span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span>
+<span class="ruby-identifier">rake</span>
+</pre>
+
+<p>Check that the last build succeeded in <a
+href="https://travis-ci.org/dblock/slack-ruby-bot">Travis CI</a> for all
+supported platforms.</p>
+
+<p>Increment the version, modify <a
+href="lib/slack-ruby-bot/version.rb">lib/slack-ruby-bot/version.rb</a>.</p>
+<ul><li>
+<p>Increment the third number if the release has bug fixes and/or very minor
+features, only (eg. change <code>0.2.1</code> to <code>0.2.2</code>).</p>
+</li><li>
+<p>Increment the second number if the release contains major features or
+breaking API changes (eg. change <code>0.2.1</code> to <code>0.3.0</code>).</p>
+</li></ul>
+
+<p>Change “Next Release” in <a href="CHANGELOG.md">CHANGELOG.md</a> to the new
+version.</p>
+
+<pre class="ruby"><span class="ruby-comment">### 0.2.2 (7/10/2015)</span>
+</pre>
+
+<p>Remove the line with “Your contribution here.”, since there will be no more
+contributions to this release.</p>
+
+<p>Commit your changes.</p>
+
+<pre>git add CHANGELOG.md lib/slack-ruby-bot/version.rb
+git commit -m &quot;Preparing for release, 0.2.2.&quot;
+git push origin master</pre>
+
+<p>Release.</p>
+
+<pre>$ rake release
+
+slack-ruby-bot 0.2.2 built to pkg/slack-ruby-bot-0.2.2.gem.
+Tagged v0.2.2.
+Pushed git commits and tags.
+Pushed slack-ruby-bot 0.2.2 to rubygems.org.</pre>
+
+<h3 id="label-Prepare+for+the+Next+Version">Prepare for the Next Version<span><a href="#label-Prepare+for+the+Next+Version">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Add the next release to <a href="CHANGELOG.md">CHANGELOG.md</a>.</p>
+
+<pre>Next Release
+============
+
+* Your contribution here.</pre>
+
+<p>Increment the third version number in <a
+href="lib/slack-ruby-bot/version.rb">lib/slack-ruby-bot/version.rb</a>.</p>
+
+<p>Comit your changes.</p>
+
+<pre>git add CHANGELOG.md lib/slack-ruby-bot/version.rb
+git commit -m &quot;Preparing for next development iteration, 0.2.3.&quot;
+git push origin master</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
